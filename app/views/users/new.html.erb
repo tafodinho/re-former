@@ -13,3 +13,23 @@
     <br /> <br />
     <%= form.submit "Create User" %>
 <% end %>
+<%
+=begin%>
+    <%= form_tag "/users", method: "post" do %>
+
+        <%= label_tag 'Username' %>
+        <%= text_field_tag 'user[username]' %>
+        <br /> <br />
+
+        <%= label_tag 'Email' %>
+        <%= email_field_tag 'user[email]' %>
+        <br /> <br />
+
+        <%= label_tag 'Password' %>
+        <%= password_field_tag 'user[password]' %>
+        <br /> <br />
+
+        <%= submit_tag "Create User" %>
+    <% end %>
+<%
+=end %>
