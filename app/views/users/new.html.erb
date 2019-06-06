@@ -2,6 +2,9 @@
 
 
 <%= form_for @user do |form| %>
+    <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %> </div>
+    <% end %>
     <%= form.label 'Username' %>
     <%= form.text_field :username %>
     <br />  <br />
