@@ -1,20 +1,15 @@
 <p> hello new user </p>
 
-<%= form_tag "/users", method: "post" do %>
 
-    <%= label_tag 'Username' %>
-    <%= text_field_tag 'user[username' %>
+<%= form_for @user do |form| %>
+    <%= form.label 'Username' %>
+    <%= form.text_field :username %>
+    <br />  <br />
+    <%= form.label 'Email' %>
+    <%= form.email_field :email %>
     <br /> <br />
-
-    <%= label_tag 'Email' %>
-    <%= email_field_tag 'user[email]' %>
+    <%= form.label 'Password' %>
+    <%= form.password_field :password %>
     <br /> <br />
-
-    <%= label_tag 'Password' %>
-    <%= password_field_tag 'user[password]' %>
-    <br /> <br />
-
-    <%= submit_tag "Create User" %>
-
-    <% end %>
-
+    <%= form.submit "Create User" %>
+<% end %>
