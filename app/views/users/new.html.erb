@@ -1,1 +1,17 @@
 <p> hello new user </p>
+
+<form method = "POST" action = "/users">
+
+    <label for ="username">Usernam: </label>
+        <input type="text" name="username"><br>
+
+    <label for ="email">Email: </label>
+        <input type="text" name="email"><br>
+
+    <label for ="password">Password: </label>
+        <input type="password" name="password"><br>
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <input type="submit" value="Submit">
+</form>
