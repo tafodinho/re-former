@@ -1,0 +1,16 @@
+<p> Edit user </p>
+
+
+<%= form_for @user do |form| %>
+    <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %> </div>
+    <% end %>
+    <%= form.label 'Username' %>
+    <%= form.text_field :username %>
+    <br />  <br />
+    <%= form.label 'Email' %>
+    <%= form.email_field :email %>
+    <br /> <br />
+    
+    <%= form.submit "Update User" %>
+<% end %>

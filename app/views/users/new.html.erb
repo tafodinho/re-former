@@ -1,0 +1,38 @@
+<p> hello new user </p>
+
+
+<%= form_for @user do |form| %>
+    <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %> </div>
+    <% end %>
+    <%= form.label 'Username' %>
+    <%= form.text_field :username %>
+    <br />  <br />
+    <%= form.label 'Email' %>
+    <%= form.email_field :email %>
+    <br /> <br />
+    <%= form.label 'Password' %>
+    <%= form.password_field :password %>
+    <br /> <br />
+    <%= form.submit "Create User" %>
+<% end %>
+<%
+=begin%>
+    <%= form_tag "/users", method: "post" do %>
+
+        <%= label_tag 'Username' %>
+        <%= text_field_tag 'user[username]' %>
+        <br /> <br />
+
+        <%= label_tag 'Email' %>
+        <%= email_field_tag 'user[email]' %>
+        <br /> <br />
+
+        <%= label_tag 'Password' %>
+        <%= password_field_tag 'user[password]' %>
+        <br /> <br />
+
+        <%= submit_tag "Create User" %>
+    <% end %>
+<%
+=end %>
